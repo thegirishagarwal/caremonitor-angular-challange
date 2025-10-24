@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 
 const user = {
-  email: 'test@example.com',
+  email: 'test@caremonitor.com',
   password: 'pass@123'
 }
 
