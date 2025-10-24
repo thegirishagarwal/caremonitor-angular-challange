@@ -1,0 +1,24 @@
+<header id="header" class="container-fluid">
+  <div class="header-container d-flex align-items-center py-2">
+    <div class="header-left">
+      <a id="logo" routerLink="/">
+        Care Monitor
+      </a>
+    </div>
+    <div class="header-right ms-auto">
+      <nav>
+        <ul class="list-unstyled d-flex align-items-center" style="gap: 15px">
+          <li>
+            <a routerLink="/dashboard">Dashboard</a>
+          </li>
+          <li>
+            <a routerLink="/items">Items</a>
+          </li>
+          <li>
+            <button matButton="elevated" (click)="logout()">Logout</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

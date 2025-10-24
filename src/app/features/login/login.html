@@ -1,0 +1,31 @@
+<section id="login">
+  <div class="login-container">
+    <div class="login-form">
+      <h2 class="form-title">Login</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="w-100 mb-2">
+          <mat-label>Email Address</mat-label>
+          <input matInput type="email" inputmode="email" placeholder="Email Address" formControlName="email" />
+          <span matSuffix [innerHTML]="'envelope' | icons"></span>
+          @if (getControlError('email', 'required')) {
+            <mat-error>Email is required</mat-error>
+          }
+          @if (getControlError('email', 'email')) {
+            <mat-error>Email is invalid</mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field class="w-100 mb-2">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="isPasswordVisible() ? 'text' : 'password'" placeholder="Password" formControlName="password" />
+          <span matSuffix [innerHTML]="(isPasswordVisible() ? 'eyeClose' : 'eye') | icons" (click)="changePasswordType()"></span>
+          @if (getControlError('password', 'required')) {
+            <mat-error>Password is required</mat-error>
+          }
+        </mat-form-field>
+        <div class="actions">
+          <button type="submit" matButton="filled" color="primary">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

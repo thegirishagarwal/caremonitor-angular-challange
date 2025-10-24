@@ -1,0 +1,23 @@
+#header {
+  background-color: var(--mat-sys-primary);
+  a {
+    color: var(--mat-sys-on-primary);
+  }
+
+  #logo {
+    font-size: 1.2rem;
+  }
+
+  nav {
+    ul {
+      li {
+        a {
+          font-size: 1rem;
+          padding: 5px;
+          position: relative;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}

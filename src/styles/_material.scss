@@ -1,0 +1,26 @@
+.mat-mdc-form-field-icon-suffix {
+  span {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 12px;
+  }
+}
+
+.mdc-snackbar {
+  &.success-snackbar {
+    --mat-sys-inverse-surface: var(--success-color);
+  }
+  &.error-snackbar {
+    --mat-sys-inverse-surface: var(--error-color);
+  }
+  &.warning-snackbar {
+    --mat-sys-inverse-surface: var(--warning-color);
+  }
+  &.info-snackbar {
+    --mat-sys-inverse-surface: var(--info-color);
+  }
+}

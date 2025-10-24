@@ -1,0 +1,43 @@
+<section id="items" class="container-fluid">
+	<div class="items-container py-2">
+    <h2>ITEMS</h2>
+    @if (!itemStore.isLoaded()) {
+      <div class="loader">
+        <mat-spinner color="primary" diameter="30"></mat-spinner>
+        Loading...
+      </div>
+    }
+
+    @if (itemStore.isLoaded()) {
+      @if (itemStore.isTableLoaded()) {
+        <div class="items-table-container table-responsive">
+          <table mat-table [dataSource]="itemStore.items()" class="mat-elevation-z8">
+            <!-- Sno Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> ID </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <!-- Title Column -->
+            <ng-container matColumnDef="title">
+              <th mat-header-cell *matHeaderCellDef> Title </th>
+              <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+            </ng-container>
+
+            <!-- Description Column -->
+            <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef> Description </th>
+              <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+          </table>
+        </div>
+      }
+      @if (!itemStore.isTableLoaded()) {
+        <app-no-records-found message="No items found" [error]="itemStore.error()"></app-no-records-found>
+      }
+    }
+  </div>
+</section>
